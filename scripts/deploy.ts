@@ -1,16 +1,14 @@
 import { ethers } from "hardhat";
 
 async function main() {
-  const Greeter = await ethers.getContractFactory("Greeter");
-  const greeter = await Greeter.deploy("Hello, Hardhat!");
+  const LensMandalaNFT = await ethers.getContractFactory("LensMandalaNFT");
+  const lensMandalaNFT = await LensMandalaNFT.deploy("Hello, Hardhat!");
 
-  await greeter.deployed();
+  await lensMandalaNFT.deployed();
 
-  console.log("Greeter deployed to:", greeter.address);
+  console.log("LensMandalaNFT deployed to:", lensMandalaNFT.address);
 }
 
-// We recommend this pattern to be able to use async/await everywhere
-// and properly handle errors.
 main().catch((error) => {
   console.error(error);
   process.exitCode = 1;
